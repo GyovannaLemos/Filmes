@@ -8,5 +8,5 @@ extract($_REQUEST, EXTR_OVERWRITE);
 if (inserirFilme()){
     echo 'Ocorreu um erro, tente novamente';
 }else{
-    echo 'Filme cadastrado com sucesso';
+    header("Location: ../lista.php");
 }

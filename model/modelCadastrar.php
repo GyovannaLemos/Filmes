@@ -16,7 +16,7 @@ function inserirFilme(){
 
 
     $query = "INSERT INTO filmes (nome_filme, genero_filme, classificaçao, diretor_filme, estudio_filme, elenco_filme, ano_lancamento) 
-    VALUES (:nome, :genero, :classificacao, :diretor, :estudio, :elenco, :lancamento,)";
+    VALUES (:nome, :genero, :classificacao, :diretor, :estudio, :elenco, :lancamento)";
 
     $cadastrar = $conn->getConn()->prepare($query);
 
@@ -30,23 +30,6 @@ function inserirFilme(){
     
 
     $cadastrar->execute();
-
-       /*if(isset($_FILES['imagem'])){
-        
-        $ext = strtolower(substr($_FILES['imagem']['name'], -4));
-        $novo_nome = date("Y.m.d-H.i.s") . $ext;
-        $pasta = '../poster/'; 
-        move_uploaded_file($_FILES['imagem']['nome_temporario'], $pasta.$novo_nome);
-    }*/
-
-
-    /*
-    if ($cadastrar->rowCount()){
-        echo 'Filme cadastrado cadastrado com sucesso';
-    }else{
-        echo 'Não foi possível cadastrar';
-    }*/
-
 
 }
 
